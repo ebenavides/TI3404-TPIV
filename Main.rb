@@ -1,6 +1,8 @@
 
 load 'TwitterAPI.rb'
 load 'InstagramAPI.rb'
+require 'twitter'
+require 'instagram'
 
 print "\nDigite el #hashtag\n"
 hashtag = gets.chomp
@@ -17,21 +19,23 @@ print "\n\n\nInstagram============================"
 _instagram.Search(hashtag,quantity)
 
 get '/' do
-erb:VentanaInicial
+  erb:VentanaInicial
 end
 
 post '/Rtweet' do
-redirect 'tweet'
+  _twitter.Search(hashtag,quantity=5)
+  redirect 'tweet'
 end
 
 get 'tweet' do
-erb:tweet
+  erb:tweet
 end
 
 post '/Rinstagram' do
-redirect 'insta'
+  _instagram.Search(tag,c=3)
+  redirect 'insta'
 end
 
 get '/insta' do
-erb:insta
+  erb:insta
 end

@@ -1,0 +1,92 @@
+<HTML>
+	<HEAD>
+			<TITLE> Resultados de Tweets </TITLE>  </CENTER>
+	</HEAD>
+		<BODY background="http://cooltwitterbackgrounds.com/wp-content/uploads/2011/10/scripture-1920x1200_cool_twitter_backgrounds1.jpg" text="white" face="Verdana" 	> </CENTER>
+		<LEFT><img src="http://www.foxnews.com/on-air/special-report-bret-baier/sites/foxnews.com.on-air.special-report-bret-baier/files/twitter-icon.png" width="100" height="100"> </left>
+		<H1><LEFT>Resultado de hashtags-Tweets:</LEFT></H1><HR>
+		
+		<table height="1300px" width="1300px">
+		<tr>
+		<td>
+		<div align = "center">
+				<p><a href="https://twitter.com/share" data-text="<%= $tit1%> <%= $aut1%>" data-url=<%= $img1%>  </a></p>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<img src= <%= $img1 %> fotouser="200px" width="200px">
+				<p>Texto: <%= $tit1 %> <br>User: <%= $aut6 %> <br>Timestamp: <%= $aut1 %> </br> </p>
+		</div>
+		</td>
+		
+		<td>			
+		<div align ="center">
+				<p><a href="https://twitter.com/share" data-text="<%= $tit2%> <%= $aut2%>" data-url=<%= $img2%> </a></p>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<img src= <%= $img2 %> fotouser="200px" width="200px">
+				<p>Texto: <%= $tit2 %> <br>User: <%= $aut6 %><br>Timestamp: <%= $aut2 %> </br> </p>
+		</div>
+		</td>
+
+		<td>
+		<div align = "center">
+				<p><a href="https://twitter.com/share" data-text="<%= $tit3%> <%= $aut3%>" data-url=<%= $img3%> </a></p>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<img src= <%= $img3 %> fotouser="200px" width="200px">
+				<p>Texto: <%= $tit3 %><br>User: <%= $aut6 %> <br>Timestamp: <%= $aut3 %> </br> </p>
+		</div>
+		</td>
+		</tr>
+		
+		
+		<tr>
+		<td>
+		<div align = "center">				
+				<p><a href="https://twitter.com/share" data-text="<%= $tit4%> <%= $aut4%>" data-url=<%= $img4%>  </a></p>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<img src= <%= $img4 %> fotouser="200px" width="200px">
+				<p>Texto: <%= $tit4 %> <br>User: <%= $aut6 %> <br>Timestamp: <%= $aut4 %> </br> </p>
+				
+		</div>
+		</td>
+		
+		<td>
+		<div align = "center">				
+				<p><a href="https://twitter.com/share" data-text="<%= $tit5%> <%= $aut5%>" data-url=<%= $img5%>  </a></p>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<img src= <%= $img5 %> fotouser="200px" width="200px">
+				<p>Texto: <%= $tit5 %> <br>User: <%= $aut6 %> <br>Timestamp: <%= $aut5 %> </br> </p>
+		</div>
+		</td>
+		
+		<td>
+			<p><a href="https://twitter.com/share" data-text="<%= $tit6%> <%= $aut6%>" data-url=<%= $img6%> </a></p>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<img src= <%= $img6 %> fotouser="200px" width="200px">
+			<p>Texto: <%= $tit6 %> <br>User: <%= $aut6 %> <br>Timestamp: <%= $aut6 %> </br> </p>
+		</div>
+		</td>
+		</tr>
+		</table>
+		
+<CENTER><P>
+		<CENTER><div id="Siguiente">
+			<P>
+			<form  action="/siguiente2" method="post">
+			<input type="submit" value="Siguiente">
+			</P>
+			</form>
+		</div></CENTER>
+		<CENTER><div id="Anterior">
+		<P>
+		<form  action="/anterior" method="post">
+			<input type="submit" value="Anterior">
+		</P>
+		</form>
+		</div></CENTER>
+		<CENTER><div id="Volver_a_buscar">
+		<P>
+		<form  action="/" method="post">
+			<input type="submit" value="Volver a Intentar">
+		</P>
+		</form>
+		</div></CENTER>
+</P></CENTER>

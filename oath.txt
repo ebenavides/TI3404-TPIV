@@ -1,0 +1,78 @@
+
+Access level	 Read-only 
+About the application permission model
+Consumer key	uKomZsjBMALqLuaSUKJ2Q
+Consumer secret	bMIq7BEDPO4THQjlippl5AKQQpQFCGsc2pShStVEg
+Request token URL	https://api.twitter.com/oauth/request_token
+Authorize URL	https://api.twitter.com/oauth/authorize
+Access token URL	https://api.twitter.com/oauth/access_token
+
+Access token	898572810-wtteo5Ts0DY1GhH0C1HK7eGIAbSYoHxHDzj8Le3k
+Access token secret	LxQkRjeFdcvjbY9Gys13U2w8deqvQBu5pkDJ9U1YFSE
+Access level	Read-only
+
+
+Access token	898572810-CAS69XgQhzPRi2sZOqecREJe8MuV37FkfqFT2sB0
+Access token secret	qfzhQLF5DXyPnwgF0LKkSdpoI1i5Xa5GnMbgMCYo4f4
+
+puts Twitter.user_timeline("developerworks").first.text
+
+languages = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+languages.each do |language|
+    puts "#{language}"
+end
+
+puts Twitter.user("MTimJones").location
+
+Twitter.search("to:justinbieber marry me", :count => 3, :result_type => "recent").results.map do |status|
+  "#{status.from_user}: #{status.text}"
+end
+
+Twitter.search("LulzSec why", :result_type => "recent").results.each do |status|
+  "#{status.from_user}: #{status.text}"
+end
+
+search = Twitter::Search.new
+
+search.containing("why").to("LulzSec").result_type("recent").each do |r| puts r.text end
+
+
+
+
+
+
+
+screen_name = String.new ARGV[0]
+
+a_user = Twitter.user(screen_name)
+
+if a_user.protected != true
+
+  puts "Username   : " + a_user.screen_name.to_s
+  puts "Name       : " + a_user.name
+  puts "Id         : " + a_user.id_str
+  puts "Location   : " + a_user.location
+  puts "User since : " + a_user.created_at.to_s
+  puts "Bio        : " + a_user.description.to_s
+  puts "Followers  : " + a_user.followers_count.to_s
+  puts "Friends    : " + a_user.friends_count.to_s
+  puts "Listed Cnt : " + a_user.listed_count.to_s
+  puts "Tweet Cnt  : " + a_user.statuses_count.to_s
+  puts "Geocoded   : " + a_user.geo_enabled.to_s
+  puts "Language   : " + a_user.lang
+  if (a_user.url != nil)
+    puts "URL        : " + a_user.url.to_s
+  end
+  if (a_user.time_zone != nil)
+    puts "Time Zone  : " + a_user.time_zone
+  end
+  puts "Verified   : " + a_user.verified.to_s
+  puts
+
+  tweet = Twitter.user_timeline(screen_name).first
+
+  puts "Tweet time : " + tweet.created_at
+  puts "Tweet ID   : " + tweet.id.to_s
+  puts "Tweet text : " + tweet.text
+
+end

@@ -23,7 +23,7 @@ get '/' do
 end
 
 post '/Rtweet' do
-  _twitter.Search(hashtag,quantity=5)
+  _twitter.Search(hashtag,5)
   redirect 'tweet'
 end
 
@@ -32,7 +32,7 @@ get 'tweet' do
 end
 
 post '/Rinstagram' do
-  _instagram.Search(tag,c=3)
+  _instagram.Search(tag,5)
   redirect 'insta'
 end
 

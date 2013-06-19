@@ -10,12 +10,23 @@ class TwitterAPI
 			config.oauth_token = '898572810-CAS69XgQhzPRi2sZOqecREJe8MuV37FkfqFT2sB0'
 			config.oauth_token_secret = 'qfzhQLF5DXyPnwgF0LKkSdpoI1i5Xa5GnMbgMCYo4f4'
 		end
+		
+		@arr=Array.new
+	
 	end
+	
 		
 	def Search(hashtag,quantity=5)
+		
 		Twitter.search(hashtag,:count=>quantity,:result_type=>"recent").results.each do |status|
-			puts "/n#{status.from_user} : #{status.text} created at #{status.created_at.to_s}/nuser picture : #{Twitter.user(status.from_user).profile_image_url.to_s}"
+			@arr.push([status.from_user,status.text,status.created_at.to_s,Twitter.user(status.from_user).profile_image_url.to_s])
+			puts "\n#{status.from_user} : #{status.text} created at #{status.created_at.to_s}\nuser picture : #{Twitter.user(status.from_user).profile_image_url.to_s}"
 		end
 	end
+	
+	def arr_read
+		return @arr
+	end
+	
 end
 
